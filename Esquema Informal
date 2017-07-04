@@ -1,0 +1,92 @@
+Modelo
+	Técnico
+		Matrícula (id) (automático)
+		Nome
+		E-mail
+		Telefone
+		Especialidade
+	Cliente
+		Nome		(1)
+		Identidade
+		CPF 		(1)
+		Endereço
+		Telefone	(1)
+		Data de Nascimento
+		E-mail
+	Ordem Serviço
+		Id (automático)
+		Especialidade 					(1)
+		Descrição (max. 300 caracteres) (1)
+		Orçamento (2)
+		Estado (2+)
+		Anotações		(3)
+		Data Conclusão	(3)
+		Hora Conclusão	(3)
+		Dados Pagamento (3)
+	Orçamento
+		Dados Cliente (importado)
+		Solicitação (importado)
+		Número Horas
+		Valor Hora
+		Lista Materiais (Custo Individual)
+		Valor Atendimento (com acréscimo de 5% (ISS))
+		Prazo Validade (30 a 90 dias)
+		Autorizado (booleano)
+	Estado
+		Cadastrada 						||
+		Aguardando Orçamento 			||
+		Aguardando Aprovação Cliente 	||
+		Aprovada 						||
+		Em andamento 					||
+		Concluída 						||
+		Em cobrança 					||
+		Encerrada 						||
+		Cancelada
+	Dados Pagamento
+		Número Recibo Pagamento
+		Forma Pagamento (Cartão de crédito ou depósito bancário)
+		Nome Instituição Pagamento
+
+Interface Gráfica (Telas)
+	Cadastro Técnico (CRUD)
+		Consulta, Alteração e Exclusão
+	Solicitação de Serviço
+		Dados Cliente(1) -> Controle
+	Consulta Cliente
+		Conferir, revisar e confirmar dados cadastrados
+	Cadastro Ordem Serviço (1)
+	Recuperar Ordem Serviço
+		Login Técnico
+			Lista de Ordens já atendidas
+				Abre Ordem Serviço (2+)
+			Lista de Ordens possíveis de atender
+				Abre Ordem Serviço (2)
+	Ordem Serviço
+
+Controle
+	Solicitação de Serviço
+		if(Cliente não cadastrado)
+			Abre Cadastro Cliente
+		Abre Consulta Cliente
+		Abre Cadastro Ordem Serviço
+	Ordem Serviço
+		if(Cadastrada)
+			Faz Orçamento
+		if(Aguardando Orçamento)
+			Edita Orçamento
+		if(Aguardando Aprovação Cliente)
+			Cliente -> aprova / não aprova
+		if(Aprovada)
+			if(Tecnico -> n° Ordens Pedido < 2)
+				Colocar em andamento
+			else
+				Gera alerta
+		if(Em andamento)
+			Edita Ordem (3)
+		if(Concluida)
+			Gerar cobrança - Preencher Data e Hora Conclusão
+				Emite Fatura
+		if(Em cobrança)
+			Encerrar - Preencher Dados Pagamento
+		if(Orçamento expirou || Pedido Cancelamento)
+			Cancela
