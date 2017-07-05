@@ -9,7 +9,7 @@ public class TelaLoginTecnico extends JFrame{
 	JTextField 	entrada[] = new JTextField[1];
 	JButton 	botaoConfirma;
 	
-	public TelaLoginTecnico(Container parent) {
+	public TelaLoginTecnico() {
 		super("Login(Técnico)");
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
@@ -42,7 +42,7 @@ public class TelaLoginTecnico extends JFrame{
 		setSize(300,150);
 		
 		//Posiciona a janela no centro da tela
-		setLocationRelativeTo(parent);
+		setLocationRelativeTo(null);
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
@@ -81,7 +81,7 @@ public class TelaLoginTecnico extends JFrame{
 	private class CampoNaoPreenchidoException extends Exception{
 		public String nomeCampo;
 		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " n�o preenchido.");
+			super("Campo de nome: "+ campo + " não preenchido.");
 			nomeCampo= campo;
 		}
 	}

@@ -1,29 +1,35 @@
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class TelaRegistroTecnico extends JFrame{
+
+
+public class TelaSolicitaServico extends JFrame { 
 	
 	JLabel		label[] = new JLabel[5];
-	JTextField 	entrada[] = new JTextField[4];
-	JButton 	botaoConfirma;
+	JTextField	entrada[] = new JTextField[3];
+	JButton 	botao[] = new JButton[1];
 	
-	//Construtor
-	public TelaRegistroTecnico(){
-		super ("Registro de novo técnico");
+	public TelaSolicitaServico(){
+		super ("Solicar novo serviço");
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
 		
-		//--Título--//
+		//Instancia objeto que controla os eventos
+		ControlaEventoSolicitaServico controlaEvento = new ControlaEventoSolicitaServico();
+		
+		
+		//--T�tulo--//
 
-		label[0] = new JLabel("Entre com os dados de registro do novo técnico:");
+		label[0] = new JLabel("Entre com os dados do cliente:");
 		container.add(label[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, label[0], 0, SpringLayout.HORIZONTAL_CENTER, container); //Alinhado com o centro
 		layout.putConstraint(SpringLayout.NORTH, label[0], 5, SpringLayout.NORTH, container); //5 pixel da borda superior
 		
-		//--Nome do técnico--//
+		//--Nome do cliente--//
 		
 		label[1] = new JLabel("Nome");
 		container.add(label[1]);
@@ -37,9 +43,9 @@ public class TelaRegistroTecnico extends JFrame{
 		
 
 		
-		//--Email de contato do tecnico--//
+		//--CPF do cliente--//
 		
-		label[2] = new JLabel("Email");
+		label[2] = new JLabel("CPF");
 		container.add(label[2]);
 		layout.putConstraint(SpringLayout.WEST, label[2], 5, SpringLayout.WEST, container); //5 pixel da borda esquerda
 		layout.putConstraint(SpringLayout.NORTH, label[2], 5, SpringLayout.SOUTH, label[1]); //5 pixel abaixo de labelNome
@@ -50,7 +56,7 @@ public class TelaRegistroTecnico extends JFrame{
 		layout.putConstraint(SpringLayout.WEST, entrada[1], 0, SpringLayout.WEST, entrada[0]);// Mesma posi��o horizontal que entradaNome
 		layout.putConstraint(SpringLayout.NORTH, entrada[1], 5, SpringLayout.SOUTH, label[1]);//5 pixel abaixo de labelNome
 		
-		//--Telefone de contato do técnico--//
+		//--Telefone de contato do cliente--//
 		
 		label[3] = new JLabel("Telefone de contato");
 		container.add(label[3]);
@@ -62,45 +68,32 @@ public class TelaRegistroTecnico extends JFrame{
 		layout.putConstraint(SpringLayout.WEST, entrada[2], 5, SpringLayout.EAST, label[3]);// 5 pixels a direita de labelTelefone
 		layout.putConstraint(SpringLayout.NORTH,entrada[2], 0, SpringLayout.NORTH, label[1]); // mesma posi��o horizontal que labelNome
 		
-		//--Habilidade profissional do tecnico--//
 		
-		label[4] = new JLabel("Hab. Profissional");
-		container.add(label[4]);
-		layout.putConstraint(SpringLayout.WEST, label[4], 0, SpringLayout.WEST, label[3]); //Mesma posi��o horizontal que labelTelefone
-		layout.putConstraint(SpringLayout.NORTH, label[4], 5, SpringLayout.SOUTH, label[1]); //5 pixel abaixo de labelNome
+		//--Botao de Solicita��o --//
+		
+		botao[0] = new JButton("Solicitar");
+		container.add(botao[0]);
+		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
+		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
+		botao[0].addActionListener(controlaEvento);
 		
 
-		entrada[3] = new JTextField(10);
-		container.add(entrada[3]);
-		layout.putConstraint(SpringLayout.WEST, entrada[3], 0, SpringLayout.WEST, entrada[2]);// Mesma posi��o horizontal que entradaTelefone
-		layout.putConstraint(SpringLayout.NORTH, entrada[3], 5, SpringLayout.SOUTH, label[1]);//5 pixel abaixo de labelNome
-
-		//--Botao de Confimação --//
-		
-		botaoConfirma = new JButton("Confirmar");
-		container.add(botaoConfirma);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botaoConfirma, 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.NORTH, botaoConfirma, 10, SpringLayout.SOUTH, label[2]);
-		
-		//Instancia objeto que controla os eventos
-		ControlaEventoRegistroTecnico controlaEvento = new ControlaEventoRegistroTecnico();
-		
-		//Adiciona o controlador de eventos para cada componente da tela
-		botaoConfirma.addActionListener(controlaEvento);
-		
-		
-		//Configurações de tamanho da janela
-		setSize(500,150);
-		//Posiciona a janela no centro da tela
+		//centraliza a janela
 		setLocationRelativeTo(null);
+
+		
+		//Configura��es de tamanho da janela
+		setSize(500,150);
+
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
 		
+	
 	}
+
 	
-	
-	//Metodo usado para checar se os campos de texto estão vazios antes de pegar seu conteúdo
+	//Metodo usado para checar se os campos de texto est�o vazios antes de pegar seu conte�do
 	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
 		
 		if(texto.getText().equals(""))
@@ -109,8 +102,10 @@ public class TelaRegistroTecnico extends JFrame{
 		return texto.getText();
 	}
 	
-	//ActionListener referente ao botao de confirmação
-	private class ControlaEventoRegistroTecnico implements ActionListener 
+
+	
+	
+	private class ControlaEventoSolicitaServico implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent evento) {
 			
@@ -120,11 +115,11 @@ public class TelaRegistroTecnico extends JFrame{
 				resultado[i] = "";
 			}
 			
-			//Se o botão de confirmacao é ativado
-			if(evento.getSource()== botaoConfirma){
+			//Se o bot�o de confirmacao � ativado
+			if(evento.getSource()== botao[0]){
 				//Pega o texto digitado nas caixas
 				for (int i = 0; i < resultado.length; i++) {
-					//Checa se os campos estão vazios
+					//Checa se os campos est�o vazios
 					try {
 						resultado[i] = pegaTexto(entrada[i]);
 					} catch (CampoNaoPreenchidoException e) {
@@ -133,23 +128,23 @@ public class TelaRegistroTecnico extends JFrame{
 						return;
 					}
 				}
-				
 				//------------------- AONDE OS DADOS SAEM DA TELA ------------------ //
 				//resultado:
 				//0 - nome
-				//1 - email
+				//1 - cpf
 				//2 - telefone
-				//3 - habilidade
-				//TODO: Passar os dados pra um controlador
 				
-				//DEBUG, caixa de diálogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nEmail: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nHabilidade Profissional: "+ resultado[3],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				//TODO: Colocar essa parte como exce��o caso o usu�rio n�o seja registrado
+				TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
 				
 			}
+			//Fecha a janela depois de abrir outra
+			setVisible(false);
+			dispose();
 		}
 	}
-
-	//Exceção caso algum campo esteja vazio
+	
+	//Exce��o caso algum campo esteja vazio
 	private class CampoNaoPreenchidoException extends Exception{
 		public String nomeCampo;
 		public CampoNaoPreenchidoException(String campo){
@@ -158,5 +153,3 @@ public class TelaRegistroTecnico extends JFrame{
 		}
 	}
 }
-
-
