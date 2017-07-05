@@ -114,7 +114,7 @@ public class TelaRegistroTecnico extends JFrame{
 		public void actionPerformed(ActionEvent evento) {
 			
 			//Strings referentes aos dados preenchidos
-			String resultado[] = new String[4];
+			String resultado[] = new String[entrada.length];
 			for (int i = 0; i < resultado.length; i++) {
 				resultado[i] = "";
 			}
@@ -132,7 +132,14 @@ public class TelaRegistroTecnico extends JFrame{
 						return;
 					}
 				}
-
+				
+				//------------------- AONDE OS DADOS SAEM DA TELA ------------------ //
+				//resultado:
+				//0 - nome
+				//1 - email
+				//2 - telefone
+				//3 - habilidade
+				//TODO: Passar os dados pra um controlador
 				
 				//DEBUG, caixa de dialogo com os os dados dos textos.
 				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nEmail: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nHabilidade Profissional: "+ resultado[3],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
