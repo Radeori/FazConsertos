@@ -9,6 +9,7 @@ public class TelaRegistroTecnico extends JFrame{
 	JTextField 	entrada[] = new JTextField[4];
 	JButton 	botaoConfirma;
 	
+	//Construtor
 	public TelaRegistroTecnico(){
 		super ("Registro de novo tecnico");
 		Container container = getContentPane();

@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args){
 		
-		TelaRegistroTecnico tela = new TelaRegistroTecnico();
+		TelaPrincipal tela = new TelaPrincipal();
 	}
 
 }
