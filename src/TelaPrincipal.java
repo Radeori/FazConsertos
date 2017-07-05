@@ -19,9 +19,9 @@ public class TelaPrincipal extends JFrame {
 		//Instancia objeto que controla os eventos
 		ControlaEventoTelaPrincipal controlaEvento = new ControlaEventoTelaPrincipal();
 		
-		//--Botao de ConfimaÁ„o --//
+		//--Botao de Confima√ß√£o --//
 		
-		botao[0] = new JButton("Registrar TÈcnico");
+		botao[0] = new JButton("Registrar T√©cnico");
 		container.add(botao[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
 		layout.putConstraint(SpringLayout.NORTH, botao[0], 10, SpringLayout.NORTH, container);
@@ -31,8 +31,10 @@ public class TelaPrincipal extends JFrame {
 		
 
 		
-		//ConfiguraÁıes de tamanho da janela
+		//Configura√ß√µes de tamanho da janela
 		setSize(300,150);
+		//Posiciona a janela no centro da tela
+		setLocationRelativeTo(null);
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
@@ -45,7 +47,7 @@ public class TelaPrincipal extends JFrame {
 	private class ControlaEventoTelaPrincipal implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent evento) {
-			//Se È o bot„o de registro de tecnico
+			//Se √© o bot√£o de registro de t√©cnico
 			if(evento.getSource() == botao[0]){
 				TelaRegistroTecnico tela = new TelaRegistroTecnico();
 			}
