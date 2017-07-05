@@ -135,6 +135,8 @@ public class TelaSolicitaServico extends JFrame {
 				//2 - telefone
 				
 				//TODO: Colocar essa parte como exceção caso o usuário não seja registrado
+				
+				JOptionPane.showMessageDialog(null,"Usuário não registrado","Erro",JOptionPane.ERROR_MESSAGE);
 				TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
 				
 			}
