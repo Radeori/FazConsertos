@@ -4,13 +4,18 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import com.sun.glass.events.KeyEvent;
+
 
 public class TelaPrincipal extends JFrame {
 	JLabel		label[] = new JLabel[1];
-	JButton 	botao[] = new JButton[3];
+	JButton 	botao[] = new JButton[2];
+	JMenuBar barraMenu = new JMenuBar();
+	JMenu menu[] = new JMenu[1];		
+	JMenuItem menuItem[] = new JMenuItem[2];
 	
 	public TelaPrincipal(){
-		super ("Menu");
+		super ("Faz Consertos");
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
@@ -18,33 +23,48 @@ public class TelaPrincipal extends JFrame {
 		//Instancia objeto que controla os eventos
 		ControlaEventoTelaPrincipal controlaEvento = new ControlaEventoTelaPrincipal();
 		
+		//Instancia a barra e os menus superiores
+		container.add(barraMenu);
+		
+		//Cria o menu de registros
+		menu[0] = new JMenu("Registrar");
+		barraMenu.add(menu[0]);
+
+			//Cria o bot�o de registro de t�cnico
+			menuItem[0] = new JMenuItem("Novo t�cnico");
+			menuItem[0].addActionListener(controlaEvento);
+			menu[0].add(menuItem[0]);
+			
+			//Cria o bot�o de registro de cliente
+			menuItem[1] = new JMenuItem("Novo cliente");
+			menuItem[1].addActionListener(controlaEvento);
+			menu[0].add(menuItem[1]);
+		
 		//--Botão de Registro Técnico --//
-		botao[0] = new JButton("Registrar Técnico");
+
+		
+		//--Solicitar servi�o --//
+		botao[0] = new JButton("Solicitar servi�o");
 		container.add(botao[0]);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
+		layout.putConstraint(SpringLayout.EAST, botao[0], -10 , SpringLayout.EAST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
-		
-		//--Botão de Login Técnico --//
-		botao[1] = new JButton("Login(Técnico)");
+
+		//--Login tecnico --//
+		botao[1] = new JButton("Login (t�cnico)");
 		container.add(botao[1]);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[1], 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.SOUTH, botao[1], -5, SpringLayout.NORTH, botao[0]);
+		layout.putConstraint(SpringLayout.EAST, botao[1], -10 , SpringLayout.WEST, botao[0]);
+		layout.putConstraint(SpringLayout.SOUTH, botao[1], 0, SpringLayout.SOUTH, botao[0]);
 		botao[1].addActionListener(controlaEvento);
 
-		//--Registro de tecnico --//
-		
-		botao[2] = new JButton("Solicitar serviço");
-		container.add(botao[2]);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[2], 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.SOUTH, botao[2], -50, SpringLayout.NORTH, botao[1]);
-		botao[2].addActionListener(controlaEvento);
-
 		//Configurações de tamanho da janela
-		setSize(300,150);
+		setSize(400,150);
 		
 		//Posiciona a janela no centro da tela
 		setLocationRelativeTo(null);
+		
+		//Destr�i a tela quando fechada
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
@@ -52,21 +72,24 @@ public class TelaPrincipal extends JFrame {
 	
 	private class ControlaEventoTelaPrincipal implements ActionListener	{
 		public void actionPerformed(ActionEvent evento) {
-			//Variáveis do evento
-			JButton botaoFonte = (JButton) evento.getSource();
 			
 			//Se é o botão de registro de técnico
-			if(botaoFonte == botao[0]){
+			if(evento.getSource() == menuItem[0]){
 				TelaRegistroTecnico telaNovoTecnico = new TelaRegistroTecnico();
 			}
-			
-			//Se é o botão de login de técnico
-			else if(botaoFonte == botao[1]){
-				TelaLoginTecnico telaLogin = new TelaLoginTecnico();
+			//Se é o botão de registro de cliente
+			else if(evento.getSource() == menuItem[1]){
+				TelaRegistroCliente telaRegistro = new TelaRegistroCliente("","","");
 			}
 			
-			else if(evento.getSource() == botao[2]){
+			//Solicitar servi�o
+			else if(evento.getSource() == botao[0]){
 				TelaSolicitaServico telaSolicita = new TelaSolicitaServico();
+			}
+			
+			//Login tecnico
+			else if(evento.getSource() == botao[1]){
+				TelaLoginTecnico telaLogin = new TelaLoginTecnico();
 			}
 			//Fecha a janela depois de abrir outra
 			setVisible(false);
