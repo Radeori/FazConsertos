@@ -20,7 +20,7 @@ public class TelaRegistroCliente extends JFrame{
 		//Instancia objeto que controla os eventos
 		ControlaEventoRegistroCliente controlaEvento = new ControlaEventoRegistroCliente();
 	
-		//--Título--//
+		//--Tï¿½tulo--//
 
 		label[0] = new JLabel("Entre com os dados de registro do cliente:");
 		container.add(label[0]);
@@ -37,7 +37,7 @@ public class TelaRegistroCliente extends JFrame{
 		entrada[0] = new JTextField(15);
 		container.add(entrada[0]);
 		layout.putConstraint(SpringLayout.WEST, entrada[0], 5, SpringLayout.EAST, label[1]);// 5 pixel a esquerda de labelNome
-		layout.putConstraint(SpringLayout.NORTH,entrada[0], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH,entrada[0], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		entrada[0].setText(nome); //Nome preenchido pela tela anterior
 		
 
@@ -52,7 +52,7 @@ public class TelaRegistroCliente extends JFrame{
 
 		entrada[1] = new JTextField(10);
 		container.add(entrada[1]);
-		layout.putConstraint(SpringLayout.WEST, entrada[1], 0, SpringLayout.WEST, entrada[0]);// Mesma posição horizontal que entradaNome
+		layout.putConstraint(SpringLayout.WEST, entrada[1], 0, SpringLayout.WEST, entrada[0]);// Mesma posiï¿½ï¿½o horizontal que entradaNome
 		layout.putConstraint(SpringLayout.NORTH, entrada[1], 5, SpringLayout.SOUTH, label[1]);//5 pixel abaixo de labelNome
 		entrada[1].setText(cpf); //CPF preenchido pela tela anterior
 		
@@ -61,30 +61,30 @@ public class TelaRegistroCliente extends JFrame{
 		label[3] = new JLabel("Telefone de contato");
 		container.add(label[3]);
 		layout.putConstraint(SpringLayout.WEST, label[3], 5, SpringLayout.EAST, entrada[0]); // 5 pixels a direita de entradaNome
-		layout.putConstraint(SpringLayout.NORTH, label[3], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH, label[3], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		
 		entrada[2] = new JTextField(10);
 		container.add(entrada[2]);
 		layout.putConstraint(SpringLayout.WEST, entrada[2], 5, SpringLayout.EAST, label[3]);// 5 pixels a direita de labelTelefone
-		layout.putConstraint(SpringLayout.NORTH,entrada[2], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH,entrada[2], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		entrada[2].setText(telefone); //Telefone preenchido pela tela anterior
 		
 		//--RG do cliente--//
 		
 		label[4] = new JLabel("RG");
 		container.add(label[4]);
-		layout.putConstraint(SpringLayout.WEST, label[4], 0, SpringLayout.WEST, label[2]); //Mesma posição horizontal que labelCPF
+		layout.putConstraint(SpringLayout.WEST, label[4], 0, SpringLayout.WEST, label[2]); //Mesma posiï¿½ï¿½o horizontal que labelCPF
 		layout.putConstraint(SpringLayout.NORTH, label[4], 5, SpringLayout.SOUTH, label[2]); //5 pixel abaixo de labelCPF
 		
 
 		entrada[3] = new JTextField(10);
 		container.add(entrada[3]);
-		layout.putConstraint(SpringLayout.WEST, entrada[3], 0, SpringLayout.WEST, entrada[1]);// Mesma posição horizontal que entradaCPF
+		layout.putConstraint(SpringLayout.WEST, entrada[3], 0, SpringLayout.WEST, entrada[1]);// Mesma posiï¿½ï¿½o horizontal que entradaCPF
 		layout.putConstraint(SpringLayout.NORTH, entrada[3], 5, SpringLayout.SOUTH, label[2]);//5 pixel abaixo de labelCPF
 		
 		//--Endereco--//
 		
-		label[5] = new JLabel(" Endereço");
+		label[5] = new JLabel(" EndereÃ§o");
 		container.add(label[5]);
 		layout.putConstraint(SpringLayout.WEST, label[5], 5, SpringLayout.EAST, entrada[1]); //5 pixel a direita de entradaCPF
 		layout.putConstraint(SpringLayout.NORTH, label[5], 5, SpringLayout.SOUTH, label[1]); //5 pixel abaixo de labelTelefone
@@ -106,7 +106,7 @@ public class TelaRegistroCliente extends JFrame{
 			container.add(entrada[5]);
 			layout.putConstraint(SpringLayout.WEST, entrada[5], 5, SpringLayout.EAST, label[6]); //5 pixel a direita de labelNascimento
 			layout.putConstraint(SpringLayout.NORTH, entrada[5], 5, SpringLayout.SOUTH, label[2]);//5 pixel abaixo de labelCPF
-			//mês
+			//mï¿½s
 			entrada[6] = new JTextField(2);
 			container.add(entrada[6]);
 			layout.putConstraint(SpringLayout.WEST, entrada[6], 2, SpringLayout.EAST, entrada[5]); //2 pixel a direita de entradaDia
@@ -114,10 +114,10 @@ public class TelaRegistroCliente extends JFrame{
 			//ano
 			entrada[7] = new JTextField(2);
 			container.add(entrada[7]);
-			layout.putConstraint(SpringLayout.WEST, entrada[7], 2, SpringLayout.EAST, entrada[6]); //2 pixel a direita de entradaMês
+			layout.putConstraint(SpringLayout.WEST, entrada[7], 2, SpringLayout.EAST, entrada[6]); //2 pixel a direita de entradaMï¿½s
 			layout.putConstraint(SpringLayout.NORTH, entrada[7], 5, SpringLayout.SOUTH, label[2]);//5 pixel abaixo de labelCPF
 		
-		//--Botao de Confimação --//
+		//--Botao de Confimaï¿½ï¿½o --//
 		
 		botao[0] = new JButton("Confirmar");
 		container.add(botao[0]);
@@ -128,14 +128,14 @@ public class TelaRegistroCliente extends JFrame{
 		//centraliza a janela
 		setLocationRelativeTo(null);
 		
-		//Configurações de tamanho da janela
+		//Configuraï¿½ï¿½es de tamanho da janela
 		setSize(500,180);
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
 	}
 	
-	//Metodo usado para checar se os campos de texto estão vazios antes de pegar seu conteúdo
+	//Metodo usado para checar se os campos de texto estï¿½o vazios antes de pegar seu conteï¿½do
 	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
 		
 		if(texto.getText().equals(""))
@@ -156,15 +156,15 @@ public class TelaRegistroCliente extends JFrame{
 				resultado[i] = "";
 			}
 			
-			//Se o botão de confirmacao é ativado
+			//Se o botï¿½o de confirmacao ï¿½ ativado
 			if(evento.getSource()== botao[0]){
 				//Pega o texto digitado nas caixas
 				for (int i = 0; i < resultado.length; i++) {
-					//Checa se os campos estão vazios
+					//Checa se os campos estï¿½o vazios
 					try {
 						resultado[i] = pegaTexto(entrada[i]);
 					} catch (CampoNaoPreenchidoException e) {
-						//Exibe um erro e cancela a checagem das caixas até que todos os campos tenham sido preenchidos
+						//Exibe um erro e cancela a checagem das caixas atï¿½ que todos os campos tenham sido preenchidos
 						JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos","Erro!",JOptionPane.ERROR_MESSAGE);
 						return;
 					}
@@ -176,22 +176,22 @@ public class TelaRegistroCliente extends JFrame{
 				//1 - CPF
 				//2 - telefone
 				//3 - RG
-				//4 - Endereço
-				//5 6 e 7 - Data de nascimento (dia,mês,ano);
+				//4 - Endereï¿½o
+				//5 6 e 7 - Data de nascimento (dia,mï¿½s,ano);
 				//TODO: Passar os dados pra um controlador
 				
 				//DEBUG, caixa de dialogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereço: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereÃ§o: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		}
 	}
 	
-	//Exceção caso algum campo esteja vazio
+	//Exceï¿½ï¿½o caso algum campo esteja vazio
 	private class CampoNaoPreenchidoException extends Exception{
 		public String nomeCampo;
 		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
+			super("Campo de nome: "+ campo + " nÃ£o preenchido.");
 			nomeCampo= campo;
 		}
 	}

@@ -13,7 +13,7 @@ public class TelaSolicitaServico extends JFrame {
 	JButton 	botao[] = new JButton[1];
 	
 	public TelaSolicitaServico(){
-		super ("Solicar novo serviço");
+		super ("Solicar novo serviÃ§o");
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
@@ -22,7 +22,7 @@ public class TelaSolicitaServico extends JFrame {
 		ControlaEventoSolicitaServico controlaEvento = new ControlaEventoSolicitaServico();
 		
 		
-		//--Título--//
+		//--Tï¿½tulo--//
 
 		label[0] = new JLabel("Entre com os dados do cliente:");
 		container.add(label[0]);
@@ -39,7 +39,7 @@ public class TelaSolicitaServico extends JFrame {
 		entrada[0] = new JTextField(15);
 		container.add(entrada[0]);
 		layout.putConstraint(SpringLayout.WEST, entrada[0], 5, SpringLayout.EAST, label[1]);// 5 pixel a esquerda de labelNome
-		layout.putConstraint(SpringLayout.NORTH,entrada[0], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH,entrada[0], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		
 
 		
@@ -53,7 +53,7 @@ public class TelaSolicitaServico extends JFrame {
 
 		entrada[1] = new JTextField(15);
 		container.add(entrada[1]);
-		layout.putConstraint(SpringLayout.WEST, entrada[1], 0, SpringLayout.WEST, entrada[0]);// Mesma posição horizontal que entradaNome
+		layout.putConstraint(SpringLayout.WEST, entrada[1], 0, SpringLayout.WEST, entrada[0]);// Mesma posiï¿½ï¿½o horizontal que entradaNome
 		layout.putConstraint(SpringLayout.NORTH, entrada[1], 5, SpringLayout.SOUTH, label[1]);//5 pixel abaixo de labelNome
 		
 		//--Telefone de contato do cliente--//
@@ -61,15 +61,15 @@ public class TelaSolicitaServico extends JFrame {
 		label[3] = new JLabel("Telefone de contato");
 		container.add(label[3]);
 		layout.putConstraint(SpringLayout.WEST, label[3], 5, SpringLayout.EAST, entrada[0]); // 5 pixels a direita de entradaNome
-		layout.putConstraint(SpringLayout.NORTH, label[3], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH, label[3], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		
 		entrada[2] = new JTextField(10);
 		container.add(entrada[2]);
 		layout.putConstraint(SpringLayout.WEST, entrada[2], 5, SpringLayout.EAST, label[3]);// 5 pixels a direita de labelTelefone
-		layout.putConstraint(SpringLayout.NORTH,entrada[2], 0, SpringLayout.NORTH, label[1]); // mesma posição horizontal que labelNome
+		layout.putConstraint(SpringLayout.NORTH,entrada[2], 0, SpringLayout.NORTH, label[1]); // mesma posiï¿½ï¿½o horizontal que labelNome
 		
 		
-		//--Botao de Solicitação --//
+		//--Botao de Solicitaï¿½ï¿½o --//
 		
 		botao[0] = new JButton("Solicitar");
 		container.add(botao[0]);
@@ -82,7 +82,7 @@ public class TelaSolicitaServico extends JFrame {
 		setLocationRelativeTo(null);
 
 		
-		//Configurações de tamanho da janela
+		//Configuraï¿½ï¿½es de tamanho da janela
 		setSize(500,150);
 
 		
@@ -93,7 +93,7 @@ public class TelaSolicitaServico extends JFrame {
 	}
 
 	
-	//Metodo usado para checar se os campos de texto estão vazios antes de pegar seu conteúdo
+	//Metodo usado para checar se os campos de texto estï¿½o vazios antes de pegar seu conteï¿½do
 	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
 		
 		if(texto.getText().equals(""))
@@ -115,15 +115,15 @@ public class TelaSolicitaServico extends JFrame {
 				resultado[i] = "";
 			}
 			
-			//Se o botão de confirmacao é ativado
+			//Se o botï¿½o de confirmacao ï¿½ ativado
 			if(evento.getSource()== botao[0]){
 				//Pega o texto digitado nas caixas
 				for (int i = 0; i < resultado.length; i++) {
-					//Checa se os campos estão vazios
+					//Checa se os campos estï¿½o vazios
 					try {
 						resultado[i] = pegaTexto(entrada[i]);
 					} catch (CampoNaoPreenchidoException e) {
-						//Exibe um erro e cancela a checagem das caixas até que todos os campos tenham sido preenchidos
+						//Exibe um erro e cancela a checagem das caixas atï¿½ que todos os campos tenham sido preenchidos
 						JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos","Erro!",JOptionPane.ERROR_MESSAGE);
 						return;
 					}
@@ -133,10 +133,10 @@ public class TelaSolicitaServico extends JFrame {
 				//0 - nome
 				//1 - cpf
 				//2 - telefone
+				//TODO: Colocar essa parte como exceï¿½ï¿½o caso o usuï¿½rio nï¿½o seja registrado
 				
-				//TODO: Colocar essa parte como exceção caso o usuário não seja registrado
-				
-				JOptionPane.showMessageDialog(null,"Usuário não registrado","Erro",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,"UsuÃ¡rio nÃ£o registrado","Erro",JOptionPane.ERROR_MESSAGE);
+
 				TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
 				
 			}
@@ -146,11 +146,11 @@ public class TelaSolicitaServico extends JFrame {
 		}
 	}
 	
-	//Exceção caso algum campo esteja vazio
+	//Exceï¿½ï¿½o caso algum campo esteja vazio
 	private class CampoNaoPreenchidoException extends Exception{
 		public String nomeCampo;
 		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
+			super("Campo de nome: "+ campo + " nÃ£o preenchido.");
 			nomeCampo= campo;
 		}
 	}

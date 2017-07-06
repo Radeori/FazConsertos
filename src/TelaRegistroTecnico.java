@@ -15,7 +15,6 @@ public class TelaRegistroTecnico extends JFrame{
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
-
 		
 		//--Título--//
 
@@ -149,13 +148,12 @@ public class TelaRegistroTecnico extends JFrame{
 			}
 		}
 	}
-	
 
 	//Exceção caso algum campo esteja vazio
 	private class CampoNaoPreenchidoException extends Exception{
 		public String nomeCampo;
 		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " n�o preenchido.");
+			super("Campo de nome: "+ campo + " não preenchido.");
 			nomeCampo= campo;
 		}
 	}

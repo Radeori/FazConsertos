@@ -5,10 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class TelaPrincipal extends JFrame { 
-	
+public class TelaPrincipal extends JFrame {
 	JLabel		label[] = new JLabel[1];
-	JButton 	botao[] = new JButton[2];
+	JButton 	botao[] = new JButton[3];
 	
 	public TelaPrincipal(){
 		super ("Menu");
@@ -19,66 +18,59 @@ public class TelaPrincipal extends JFrame {
 		//Instancia objeto que controla os eventos
 		ControlaEventoTelaPrincipal controlaEvento = new ControlaEventoTelaPrincipal();
 		
-<<<<<<< HEAD
-		//--Registro de tecnico --//
-		
-		botao[0] = new JButton("Registrar t�cnico");
-=======
-		//--Botao de Confimação --//
-		
+		//--Botão de Registro Técnico --//
 		botao[0] = new JButton("Registrar Técnico");
->>>>>>> fac5e41a69f5a7a6ad76bf874b0b1280fff0f814
 		container.add(botao[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.NORTH, botao[0], 10, SpringLayout.NORTH, container);
+		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
 		
-		//--Registro de tecnico --//
-		
-		botao[1] = new JButton("Solicitar serv�o");
+		//--Botão de Login Técnico --//
+		botao[1] = new JButton("Login(Técnico)");
 		container.add(botao[1]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[1], 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.NORTH, botao[1], 10, SpringLayout.SOUTH, botao[0]);
+		layout.putConstraint(SpringLayout.SOUTH, botao[1], -5, SpringLayout.NORTH, botao[0]);
 		botao[1].addActionListener(controlaEvento);
-		
 
+		//--Registro de tecnico --//
 		
-<<<<<<< HEAD
-		
-		//centraliza a janela
-		setLocationRelativeTo(null);
-		
-		//Configura��es de tamanho da janela
-=======
+		botao[2] = new JButton("Solicitar serviço");
+		container.add(botao[2]);
+		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[2], 0 , SpringLayout.HORIZONTAL_CENTER, container);
+		layout.putConstraint(SpringLayout.SOUTH, botao[2], -50, SpringLayout.NORTH, botao[1]);
+		botao[2].addActionListener(controlaEvento);
+
 		//Configurações de tamanho da janela
->>>>>>> fac5e41a69f5a7a6ad76bf874b0b1280fff0f814
 		setSize(300,150);
+		
 		//Posiciona a janela no centro da tela
 		setLocationRelativeTo(null);
 		
 		//Ativa a visibilidade da janela
 		setVisible(true);
-	}
-
+	}	
 	
-
-	
-	
-	private class ControlaEventoTelaPrincipal implements ActionListener 
-	{
+	private class ControlaEventoTelaPrincipal implements ActionListener	{
 		public void actionPerformed(ActionEvent evento) {
+			//Variáveis do evento
+			JButton botaoFonte = (JButton) evento.getSource();
+			
 			//Se é o botão de registro de técnico
-			if(evento.getSource() == botao[0]){
-				TelaRegistroTecnico telaTecnico = new TelaRegistroTecnico();
+			if(botaoFonte == botao[0]){
+				TelaRegistroTecnico telaNovoTecnico = new TelaRegistroTecnico();
 			}
-			else if(evento.getSource() == botao[1]){
+			
+			//Se é o botão de login de técnico
+			else if(botaoFonte == botao[1]){
+				TelaLoginTecnico telaLogin = new TelaLoginTecnico();
+			}
+			
+			else if(evento.getSource() == botao[2]){
 				TelaSolicitaServico telaSolicita = new TelaSolicitaServico();
 			}
 			//Fecha a janela depois de abrir outra
 			setVisible(false);
-			dispose();
-			
+			dispose();			
 		}
-
 	}
 }
