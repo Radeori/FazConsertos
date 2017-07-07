@@ -145,6 +145,15 @@ public class TelaRegistroTecnico extends JFrame{
 				//DEBUG, caixa de diálogo com os os dados dos textos.
 				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nEmail: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nHabilidade Profissional: "+ resultado[3],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
 				
+				//Fecha a janela depois de abrir outra
+				setVisible(false);
+				dispose();
+				
+				//Volta pra tela principal
+				TelaPrincipal tela = new TelaPrincipal();
+				
+				
+				
 			}
 		}
 	}

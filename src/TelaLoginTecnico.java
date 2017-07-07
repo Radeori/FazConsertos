@@ -73,6 +73,15 @@ public class TelaLoginTecnico extends JFrame{
 			
 				//DEBUG, caixa de diálogo com os os dados dos textos.
 				JOptionPane.showMessageDialog(null, "Olá, " + resultado[0] + "!","DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				
+				
+				
+				//Fecha a janela depois de abrir outra
+				setVisible(false);
+				dispose();
+				
+				//Volta pra tela principal
+				TelaPrincipal tela = new TelaPrincipal();
 			}
 		}
 	}

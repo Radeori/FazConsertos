@@ -183,6 +183,13 @@ public class TelaRegistroCliente extends JFrame{
 				//DEBUG, caixa de dialogo com os os dados dos textos.
 				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereço: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
 				
+				//Volta pra tela principal
+				TelaPrincipal tela = new TelaPrincipal();
+				
+				//Fecha a janela depois de abrir outra
+				setVisible(false);
+				dispose();
+
 			}
 		}
 	}
