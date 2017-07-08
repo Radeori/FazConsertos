@@ -89,7 +89,7 @@ public class TelaRegistroTecnico extends JFrame{
 		//Adiciona o controlador de eventos para cada componente da tela
 		botaoConfirma.addActionListener(controlaEvento);
 		
-		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		botaoVoltar = new BotaoVoltar();
 		container.add(botaoVoltar);
 		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
@@ -155,8 +155,7 @@ public class TelaRegistroTecnico extends JFrame{
 				setVisible(false);
 				dispose();
 				
-				//Volta pra tela principal
-				TelaPrincipal tela = new TelaPrincipal();
+				new TelaListasOrdensServico();
 				
 				
 				

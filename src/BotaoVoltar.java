@@ -5,19 +5,20 @@ import java.awt.event.ActionListener;
 
 public class BotaoVoltar extends JButton{
 	private String nomeTelaDestino;
+	private static final String NOME_BOTAO = "Voltar"; 
 	
 	private void initGeral() {
 		this.addActionListener(new ControlaBotaoVoltar());
 	}
 	
-	public BotaoVoltar(String nomeBotao, String nomeClasseJanela) {
-		super("Voltar");
+	public BotaoVoltar(String nomeClasseJanela) {
+		super(NOME_BOTAO);
 		this.nomeTelaDestino = nomeClasseJanela;
 		initGeral();
 	}
 	
-	public BotaoVoltar(String nomeBotao) {
-		super("Voltar");
+	public BotaoVoltar() {
+		super(NOME_BOTAO);
 		this.nomeTelaDestino = "TelaPrincipal";
 		initGeral();
 	}

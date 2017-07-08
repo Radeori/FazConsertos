@@ -39,7 +39,7 @@ public class TelaLoginTecnico extends JFrame{
 		layout.putConstraint(SpringLayout.NORTH, botaoConfirma, 3, SpringLayout.VERTICAL_CENTER, container);
 		botaoConfirma.addActionListener(controlaEvento);
 		
-		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		botaoVoltar = new BotaoVoltar();
 		container.add(botaoVoltar);
 		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
@@ -87,7 +87,7 @@ public class TelaLoginTecnico extends JFrame{
 				dispose();
 				
 				//Volta pra tela principal
-				TelaPrincipal tela = new TelaPrincipal();
+				new TelaListasOrdensServico();
 			}
 		}
 	}

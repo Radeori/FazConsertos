@@ -126,7 +126,7 @@ public class TelaRegistroCliente extends JFrame{
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
 		
-		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		botaoVoltar = new BotaoVoltar();
 		container.add(botaoVoltar);
 		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
