@@ -8,6 +8,7 @@ public class TelaRegistroTecnico extends JFrame{
 	JLabel		label[] = new JLabel[5];
 	JTextField 	entrada[] = new JTextField[4];
 	JButton 	botaoConfirma;
+	BotaoVoltar botaoVoltar;
 	
 	//Construtor
 	public TelaRegistroTecnico(){
@@ -18,7 +19,7 @@ public class TelaRegistroTecnico extends JFrame{
 		
 		//--Título--//
 
-		label[0] = new JLabel("Entre com os dados de registro do novo t�cnico:");
+		label[0] = new JLabel("Entre com os dados de registro do novo t�cnico:");
 		container.add(label[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, label[0], 0, SpringLayout.HORIZONTAL_CENTER, container); //Alinhado com o centro
 		layout.putConstraint(SpringLayout.NORTH, label[0], 5, SpringLayout.NORTH, container); //5 pixel da borda superior
@@ -87,6 +88,11 @@ public class TelaRegistroTecnico extends JFrame{
 		
 		//Adiciona o controlador de eventos para cada componente da tela
 		botaoConfirma.addActionListener(controlaEvento);
+		
+		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		container.add(botaoVoltar);
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		
 		//Configurações de tamanho da janela

@@ -8,6 +8,7 @@ public class TelaLoginTecnico extends JFrame{
 	JLabel		label[] = new JLabel[1];
 	JTextField 	entrada[] = new JTextField[1];
 	JButton 	botaoConfirma;
+	BotaoVoltar botaoVoltar;
 	
 	public TelaLoginTecnico() {
 		super("Login(Técnico)");
@@ -37,6 +38,11 @@ public class TelaLoginTecnico extends JFrame{
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botaoConfirma, 0 , SpringLayout.HORIZONTAL_CENTER, container);
 		layout.putConstraint(SpringLayout.NORTH, botaoConfirma, 3, SpringLayout.VERTICAL_CENTER, container);
 		botaoConfirma.addActionListener(controlaEvento);
+		
+		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		container.add(botaoVoltar);
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		//Configurações de tamanho da janela
 		setSize(300,150);

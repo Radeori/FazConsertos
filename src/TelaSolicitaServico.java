@@ -11,6 +11,7 @@ public class TelaSolicitaServico extends JFrame {
 	JLabel		label[] = new JLabel[5];
 	JTextField	entrada[] = new JTextField[3];
 	JButton 	botao[] = new JButton[1];
+	BotaoVoltar botaoVoltar;	
 	
 	public TelaSolicitaServico(){
 		super ("Solicar novo serviço");
@@ -76,6 +77,11 @@ public class TelaSolicitaServico extends JFrame {
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
+		
+		botaoVoltar = new BotaoVoltar("TelaPrincipal");
+		container.add(botaoVoltar);
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 
 		//centraliza a janela
