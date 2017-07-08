@@ -3,14 +3,14 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class TelaListasOrdensServico extends JFrame{
+public class TelaListasOrdensServico extends Tela{
 	
 	JScrollPane scrollLista[] = new JScrollPane[2];
 	JList lista[] = new JList[2];
 	BotaoVoltar botaoVoltar;
 	
 	public TelaListasOrdensServico() {
-		super("Menu (Técnico)");
+		super("Menu (Técnico)",1,1,1);
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
