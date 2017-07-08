@@ -89,12 +89,8 @@ public class TelaRegistroTecnico extends Tela{
 		
 		
 		//Configurações de tamanho da janela
-		setSize(500,150);
-		//Posiciona a janela no centro da tela
-		setLocationRelativeTo(null);
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
+		mostraTela(500,150);
+
 		
 	}
 	

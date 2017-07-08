@@ -70,7 +70,7 @@ public class TelaLoginTecnico extends Tela{
 				dispose();
 				
 				//Volta pra tela principal
-				//new TelaListasOrdensServico();
+				new TelaListasOrdensServico();
 			}
 		}
 	}

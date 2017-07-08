@@ -64,17 +64,8 @@ public class TelaPrincipal extends Tela {
 		layout.putConstraint(SpringLayout.SOUTH, botao[2], 0, SpringLayout.SOUTH, botao[1]);
 		botao[2].addActionListener(controlaEvento);
 
-		//Configurações de tamanho da janela
-		setSize(500,150);
-		
-		//Posiciona a janela no centro da tela
-		setLocationRelativeTo(null);
-		
-		//Destr�i a tela quando fechada
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
+		//Mostra a janela
+		mostraTela(500,150);
 	}	
 	
 	private class ControlaEvento implements ActionListener	{

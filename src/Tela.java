@@ -27,6 +27,21 @@ public abstract class Tela extends JFrame{
 		
 	}
 	
+	void mostraTela(int largura,int altura)
+	{
+		//Configurações de tamanho da janela
+		setSize(largura,altura);
+		
+		//Posiciona a janela no centro da tela
+		setLocationRelativeTo(null);
+		
+		//Destr�i a tela quando fechada
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		
+		//Ativa a visibilidade da janela
+		setVisible(true);
+	}
+	
 	//Metodo usado para checar se os campos de texto est�o vazios antes de pegar seu conte�do
 	String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
 		

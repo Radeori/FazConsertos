@@ -5,11 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 public class TelaRegistroCliente extends Tela{
 	
+	boolean solicita;
 	
 	//Construtor
 	public TelaRegistroCliente(String nome,String cpf,String telefone){
 		super ("Registro de novo cliente",7,8,2);
-
+		
+		
 		//Instancia objeto que controla os eventos
 		ControlaEvento controlaEvento = new ControlaEvento();
 	
@@ -119,19 +121,14 @@ public class TelaRegistroCliente extends Tela{
 		botao[0].addActionListener(controlaEvento);
 		
 		// - Botao de voltar - //
-		botaoVoltar = new BotaoVoltar();
-		container.add(botao[1]);
+		container.add(botaoVoltar);
 		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
-		//centraliza a janela
-		setLocationRelativeTo(null);
-		
-		//Configura��es de tamanho da janela
-		setSize(500,180);
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
+
+		//mostra, centraliza e configura tela
+		mostraTela(500,180);
+
 	}
 
 	
@@ -173,8 +170,7 @@ public class TelaRegistroCliente extends Tela{
 				//DEBUG, caixa de dialogo com os os dados dos textos.
 				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereço: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
 				
-				//Volta pra tela principal
-				TelaPrincipal tela = new TelaPrincipal();
+					TelaDadosServico telaDados = new TelaDadosServico();
 				
 				//Fecha a janela depois de abrir outra
 				setVisible(false);

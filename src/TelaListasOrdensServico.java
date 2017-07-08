@@ -40,13 +40,7 @@ public class TelaListasOrdensServico extends Tela{
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		//Configurações de tamanho da janela
-		setSize(350,350);
-		
-		//Posiciona a janela no centro da tela
-		setLocationRelativeTo(null);
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
+		mostraTela(350,350);
 	}
 
 	private class ControlaEventoLoginTecnico implements ActionListener {

@@ -3,21 +3,18 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class TelaLoginCliente extends JFrame{
+public class TelaLoginCliente extends Tela{
 	
-	JLabel		label[] = new JLabel[1];
-	JTextField 	entrada[] = new JTextField[1];
-	JButton 	botaoConfirma;
-	BotaoVoltar botaoVoltar;
+
 	
 	public TelaLoginCliente() {
-		super("Login(Cliente)");
+		super("Login(Cliente)",1,1,1);
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
 		
 		//Instancia objeto que controla os eventos
-		ControlaEventoLoginTecnico controlaEvento = new ControlaEventoLoginTecnico();
+		ControlaEvento controlaEvento = new ControlaEvento();
 		
 		//--Matrícula do técnico--//
 
@@ -33,11 +30,11 @@ public class TelaLoginCliente extends JFrame{
 				
 		//--Botao de Confimação --//
 		
-		botaoConfirma = new JButton("Login");
-		container.add(botaoConfirma);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botaoConfirma, 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.NORTH, botaoConfirma, 3, SpringLayout.VERTICAL_CENTER, container);
-		botaoConfirma.addActionListener(controlaEvento);
+		botao[0] = new JButton("Login");
+		container.add(botao[0]);
+		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
+		layout.putConstraint(SpringLayout.NORTH, botao[0], 3, SpringLayout.VERTICAL_CENTER, container);
+		botao[0].addActionListener(controlaEvento);
 		
 		botaoVoltar = new BotaoVoltar();
 		container.add(botaoVoltar);
@@ -45,30 +42,15 @@ public class TelaLoginCliente extends JFrame{
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		//Configurações de tamanho da janela
-		setSize(300,150);
-		
-		//Posiciona a janela no centro da tela
-		setLocationRelativeTo(null);
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
+		mostraTela(300,150);
 	}
 	
-	
-	//Metodo usado para checar se os campos de texto estão vazios antes de pegar seu conteúdo
-	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
-		
-		if(texto.getText().equals(""))
-			throw new CampoNaoPreenchidoException(texto.getName());
-		
-		return texto.getText();
-	}
 
-	private class ControlaEventoLoginTecnico implements ActionListener {
+	private class ControlaEvento implements ActionListener {
 
 		public void actionPerformed(ActionEvent evento) {
 			String resultado[] = new String[1];
-			if(evento.getSource() == botaoConfirma) {
+			if(evento.getSource() == botao[0]) {
 				try {
 					resultado[0] = pegaTexto(entrada[0]);
 				}
@@ -89,15 +71,6 @@ public class TelaLoginCliente extends JFrame{
 				//Volta pra tela principal
 				TelaPrincipal tela = new TelaPrincipal();
 			}
-		}
-	}
-
-	//Exceção caso algum campo esteja vazio
-	private class CampoNaoPreenchidoException extends Exception{
-		public String nomeCampo;
-		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
-			nomeCampo= campo;
 		}
 	}
 }

@@ -76,16 +76,9 @@ public class TelaSolicitaServico extends Tela {
 		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 
-		//centraliza a janela
-		setLocationRelativeTo(null);
+		//Mostra a tela
+		mostraTela(500,150);
 
-		
-		//Configura��es de tamanho da janela
-		setSize(500,150);
-
-		
-		//Ativa a visibilidade da janela
-		setVisible(true);
 		
 	
 	}
