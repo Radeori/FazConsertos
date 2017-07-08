@@ -15,7 +15,7 @@ public class TelaPrincipal extends Tela {
 	JMenuItem menuItem[] = new JMenuItem[2];
 	
 	public TelaPrincipal(){
-		super ("Faz Consertos",1,1,2);
+		super ("Faz Consertos",1,1,3);
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
