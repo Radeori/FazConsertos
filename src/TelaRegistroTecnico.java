@@ -3,18 +3,12 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class TelaRegistroTecnico extends JFrame{
-	
-	JLabel		label[] = new JLabel[5];
-	JTextField 	entrada[] = new JTextField[4];
-	JButton 	botaoConfirma;
+public class TelaRegistroTecnico extends Tela{
+
 	
 	//Construtor
 	public TelaRegistroTecnico(){
-		super ("Registro de novo técnico");
-		Container container = getContentPane();
-		SpringLayout layout = new SpringLayout();
-		container.setLayout(layout);
+		super ("Registro de novo técnico",5,4,1);
 		
 		//--Título--//
 
@@ -77,16 +71,16 @@ public class TelaRegistroTecnico extends JFrame{
 
 		//--Botao de Confimação --//
 		
-		botaoConfirma = new JButton("Confirmar");
-		container.add(botaoConfirma);
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botaoConfirma, 0 , SpringLayout.HORIZONTAL_CENTER, container);
-		layout.putConstraint(SpringLayout.NORTH, botaoConfirma, 10, SpringLayout.SOUTH, label[2]);
+		botao[0] = new JButton("Confirmar");
+		container.add(botao[0]);
+		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
+		layout.putConstraint(SpringLayout.NORTH, botao[0], 10, SpringLayout.SOUTH, label[2]);
 		
 		//Instancia objeto que controla os eventos
 		ControlaEventoRegistroTecnico controlaEvento = new ControlaEventoRegistroTecnico();
 		
 		//Adiciona o controlador de eventos para cada componente da tela
-		botaoConfirma.addActionListener(controlaEvento);
+		botao[0].addActionListener(controlaEvento);
 		
 		
 		//Configurações de tamanho da janela
@@ -97,16 +91,6 @@ public class TelaRegistroTecnico extends JFrame{
 		//Ativa a visibilidade da janela
 		setVisible(true);
 		
-	}
-	
-	
-	//Metodo usado para checar se os campos de texto estão vazios antes de pegar seu conteúdo
-	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
-		
-		if(texto.getText().equals(""))
-			throw new CampoNaoPreenchidoException(texto.getName());
-		
-		return texto.getText();
 	}
 	
 	//ActionListener referente ao botao de confirmação
@@ -121,7 +105,7 @@ public class TelaRegistroTecnico extends JFrame{
 			}
 			
 			//Se o botão de confirmacao é ativado
-			if(evento.getSource()== botaoConfirma){
+			if(evento.getSource()== botao[0]){
 				//Pega o texto digitado nas caixas
 				for (int i = 0; i < resultado.length; i++) {
 					//Checa se os campos estão vazios
@@ -155,15 +139,6 @@ public class TelaRegistroTecnico extends JFrame{
 				
 				
 			}
-		}
-	}
-
-	//Exceção caso algum campo esteja vazio
-	private class CampoNaoPreenchidoException extends Exception{
-		public String nomeCampo;
-		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
-			nomeCampo= campo;
 		}
 	}
 }

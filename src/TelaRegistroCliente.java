@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-public class TelaRegistroCliente extends JFrame{
+public class TelaRegistroCliente extends Tela{
 	
 	JLabel		label[] = new JLabel[7];
 	JTextField 	entrada[] = new JTextField[8];
@@ -11,14 +11,10 @@ public class TelaRegistroCliente extends JFrame{
 	
 	//Construtor
 	public TelaRegistroCliente(String nome,String cpf,String telefone){
-		super ("Registro de novo cliente");
-		Container container = getContentPane();
-		SpringLayout layout = new SpringLayout();
-		container.setLayout(layout);
+		super ("Registro de novo cliente",7,8,1);
 
-		
 		//Instancia objeto que controla os eventos
-		ControlaEventoRegistroCliente controlaEvento = new ControlaEventoRegistroCliente();
+		ControlaEvento controlaEvento = new ControlaEvento();
 	
 		//--T�tulo--//
 
@@ -134,19 +130,10 @@ public class TelaRegistroCliente extends JFrame{
 		//Ativa a visibilidade da janela
 		setVisible(true);
 	}
-	
-	//Metodo usado para checar se os campos de texto est�o vazios antes de pegar seu conte�do
-	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
-		
-		if(texto.getText().equals(""))
-			throw new CampoNaoPreenchidoException(texto.getName());
-		
-		return texto.getText();
-	}
-	
+
 	
 	//ActionListener referente ao botao de confirmacao
-	private class ControlaEventoRegistroCliente implements ActionListener 
+	class ControlaEvento implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent evento) {
 			
@@ -191,15 +178,6 @@ public class TelaRegistroCliente extends JFrame{
 				dispose();
 
 			}
-		}
-	}
-	
-	//Exce��o caso algum campo esteja vazio
-	private class CampoNaoPreenchidoException extends Exception{
-		public String nomeCampo;
-		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
-			nomeCampo= campo;
 		}
 	}
 

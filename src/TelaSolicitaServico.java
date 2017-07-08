@@ -6,20 +6,12 @@ import javax.swing.*;
 
 
 
-public class TelaSolicitaServico extends JFrame { 
-	
-	JLabel		label[] = new JLabel[5];
-	JTextField	entrada[] = new JTextField[3];
-	JButton 	botao[] = new JButton[1];
-	
+public class TelaSolicitaServico extends Tela { 
 	public TelaSolicitaServico(){
-		super ("Solicar novo serviço");
-		Container container = getContentPane();
-		SpringLayout layout = new SpringLayout();
-		container.setLayout(layout);
+		super ("Solicar novo serviço",5,3,1);
 		
 		//Instancia objeto que controla os eventos
-		ControlaEventoSolicitaServico controlaEvento = new ControlaEventoSolicitaServico();
+		ControlaEvento controlaEvento = new ControlaEvento();
 		
 		
 		//--T�tulo--//
@@ -93,19 +85,7 @@ public class TelaSolicitaServico extends JFrame {
 	}
 
 	
-	//Metodo usado para checar se os campos de texto est�o vazios antes de pegar seu conte�do
-	private String pegaTexto(JTextField texto) throws CampoNaoPreenchidoException{
-		
-		if(texto.getText().equals(""))
-			throw new CampoNaoPreenchidoException(texto.getName());
-		
-		return texto.getText();
-	}
-	
-
-	
-	
-	private class ControlaEventoSolicitaServico implements ActionListener 
+	private class ControlaEvento implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent evento) {
 			
@@ -145,13 +125,5 @@ public class TelaSolicitaServico extends JFrame {
 			dispose();
 		}
 	}
-	
-	//Exce��o caso algum campo esteja vazio
-	private class CampoNaoPreenchidoException extends Exception{
-		public String nomeCampo;
-		public CampoNaoPreenchidoException(String campo){
-			super("Campo de nome: "+ campo + " não preenchido.");
-			nomeCampo= campo;
-		}
-	}
+
 }

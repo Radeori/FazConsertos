@@ -7,21 +7,19 @@ import javax.swing.*;
 import com.sun.glass.events.KeyEvent;
 
 
-public class TelaPrincipal extends JFrame {
-	JLabel		label[] = new JLabel[1];
-	JButton 	botao[] = new JButton[2];
+public class TelaPrincipal extends Tela {
 	JMenuBar barraMenu = new JMenuBar();
 	JMenu menu[] = new JMenu[1];		
 	JMenuItem menuItem[] = new JMenuItem[2];
 	
 	public TelaPrincipal(){
-		super ("Faz Consertos");
+		super ("Faz Consertos",1,1,2);
 		Container container = getContentPane();
 		SpringLayout layout = new SpringLayout();
 		container.setLayout(layout);
 		
 		//Instancia objeto que controla os eventos
-		ControlaEventoTelaPrincipal controlaEvento = new ControlaEventoTelaPrincipal();
+		ControlaEvento controlaEvento = new ControlaEvento();
 		
 		//Instancia a barra e os menus superiores
 		container.add(barraMenu);
@@ -70,7 +68,7 @@ public class TelaPrincipal extends JFrame {
 		setVisible(true);
 	}	
 	
-	private class ControlaEventoTelaPrincipal implements ActionListener	{
+	private class ControlaEvento implements ActionListener	{
 		public void actionPerformed(ActionEvent evento) {
 			
 			//Se é o botão de registro de técnico
