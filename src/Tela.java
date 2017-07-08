@@ -10,6 +10,7 @@ public abstract class Tela extends JFrame{
 	JLabel			label[];
 	JTextField 		entrada[];
 	JButton 		botao[];
+	BotaoVoltar 	botaoVoltar;
 	Container 		container;
 	SpringLayout 	layout;
 	
@@ -22,7 +23,7 @@ public abstract class Tela extends JFrame{
 		label = new JLabel[nLabel];
 		entrada = new JTextField[nEntrada];
 		botao = new JButton[nBotao];
-		
+		botaoVoltar = new BotaoVoltar();
 		
 	}
 	

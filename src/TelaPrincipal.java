@@ -8,6 +8,8 @@ import com.sun.glass.events.KeyEvent;
 
 
 public class TelaPrincipal extends Tela {
+
+
 	JMenuBar barraMenu = new JMenuBar();
 	JMenu menu[] = new JMenu[1];		
 	JMenuItem menuItem[] = new JMenuItem[2];
@@ -28,12 +30,12 @@ public class TelaPrincipal extends Tela {
 		menu[0] = new JMenu("Registrar");
 		barraMenu.add(menu[0]);
 
-			//Cria o botão de registro de técnico
-			menuItem[0] = new JMenuItem("Novo técnico");
+			//Cria o botï¿½o de registro de tï¿½cnico
+			menuItem[0] = new JMenuItem("Novo tï¿½cnico");
 			menuItem[0].addActionListener(controlaEvento);
 			menu[0].add(menuItem[0]);
 			
-			//Cria o botão de registro de cliente
+			//Cria o botï¿½o de registro de cliente
 			menuItem[1] = new JMenuItem("Novo cliente");
 			menuItem[1].addActionListener(controlaEvento);
 			menu[0].add(menuItem[1]);
@@ -41,27 +43,34 @@ public class TelaPrincipal extends Tela {
 		//--BotÃ£o de Registro TÃ©cnico --//
 
 		
-		//--Solicitar serviço --//
-		botao[0] = new JButton("Solicitar serviço");
+		//--Solicitar serviï¿½o --//
+		botao[0] = new JButton("Solicitar serviï¿½o");
 		container.add(botao[0]);
 		layout.putConstraint(SpringLayout.EAST, botao[0], -10 , SpringLayout.EAST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
 
 		//--Login tecnico --//
-		botao[1] = new JButton("Login (técnico)");
+		botao[1] = new JButton("Login (tï¿½cnico)");
 		container.add(botao[1]);
 		layout.putConstraint(SpringLayout.EAST, botao[1], -10 , SpringLayout.WEST, botao[0]);
 		layout.putConstraint(SpringLayout.SOUTH, botao[1], 0, SpringLayout.SOUTH, botao[0]);
 		botao[1].addActionListener(controlaEvento);
 
+		//--Login cliente --//
+		botao[2] = new JButton("Login (cliente)");
+		container.add(botao[2]);
+		layout.putConstraint(SpringLayout.EAST, botao[2], -10 , SpringLayout.WEST, botao[1]);
+		layout.putConstraint(SpringLayout.SOUTH, botao[2], 0, SpringLayout.SOUTH, botao[1]);
+		botao[2].addActionListener(controlaEvento);
+
 		//ConfiguraÃ§Ãµes de tamanho da janela
-		setSize(400,150);
+		setSize(500,150);
 		
 		//Posiciona a janela no centro da tela
 		setLocationRelativeTo(null);
 		
-		//Destrói a tela quando fechada
+		//Destrï¿½i a tela quando fechada
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		//Ativa a visibilidade da janela
@@ -80,7 +89,7 @@ public class TelaPrincipal extends Tela {
 				TelaRegistroCliente telaRegistro = new TelaRegistroCliente("","","");
 			}
 			
-			//Solicitar serviço
+			//Solicitar serviï¿½o
 			else if(evento.getSource() == botao[0]){
 				TelaSolicitaServico telaSolicita = new TelaSolicitaServico();
 			}
@@ -88,6 +97,11 @@ public class TelaPrincipal extends Tela {
 			//Login tecnico
 			else if(evento.getSource() == botao[1]){
 				TelaLoginTecnico telaLogin = new TelaLoginTecnico();
+			}
+			
+			//Login cliente
+			else if(evento.getSource() == botao[2]){
+				TelaLoginCliente telaLogin = new TelaLoginCliente();
 			}
 			//Fecha a janela depois de abrir outra
 			setVisible(false);

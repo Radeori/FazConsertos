@@ -5,13 +5,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 public class TelaRegistroCliente extends Tela{
 	
-	JLabel		label[] = new JLabel[7];
-	JTextField 	entrada[] = new JTextField[8];
-	JButton 	botao[] = new JButton[1];
 	
 	//Construtor
 	public TelaRegistroCliente(String nome,String cpf,String telefone){
-		super ("Registro de novo cliente",7,8,1);
+		super ("Registro de novo cliente",7,8,2);
 
 		//Instancia objeto que controla os eventos
 		ControlaEvento controlaEvento = new ControlaEvento();
@@ -120,6 +117,12 @@ public class TelaRegistroCliente extends Tela{
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
+		
+		// - Botao de voltar - //
+		botaoVoltar = new BotaoVoltar();
+		container.add(botao[1]);
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		//centraliza a janela
 		setLocationRelativeTo(null);

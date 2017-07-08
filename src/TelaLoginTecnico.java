@@ -5,9 +5,8 @@ import javax.swing.*;
 
 public class TelaLoginTecnico extends Tela{
 
-	
 	public TelaLoginTecnico() {
-		super("Login(Técnico)",1,1,1);
+		super("Login(Técnico)",1,1,2);
 		
 		//Instancia objeto que controla os eventos
 		ControlaEvento controlaEvento = new ControlaEvento();
@@ -31,6 +30,11 @@ public class TelaLoginTecnico extends Tela{
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, botao[0], 0 , SpringLayout.HORIZONTAL_CENTER, container);
 		layout.putConstraint(SpringLayout.NORTH, botao[0], 3, SpringLayout.VERTICAL_CENTER, container);
 		botao[0].addActionListener(controlaEvento);
+		
+		//--Botao de Voltar --//
+		container.add(botaoVoltar);
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
 		
 		//Configurações de tamanho da janela
 		setSize(300,150);
@@ -66,7 +70,7 @@ public class TelaLoginTecnico extends Tela{
 				dispose();
 				
 				//Volta pra tela principal
-				TelaPrincipal tela = new TelaPrincipal();
+				//new TelaListasOrdensServico();
 			}
 		}
 	}

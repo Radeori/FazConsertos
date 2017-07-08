@@ -12,7 +12,7 @@ public class TelaRegistroTecnico extends Tela{
 		
 		//--Título--//
 
-		label[0] = new JLabel("Entre com os dados de registro do novo t�cnico:");
+		label[0] = new JLabel("Entre com os dados de registro do novo t�cnico:");
 		container.add(label[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, label[0], 0, SpringLayout.HORIZONTAL_CENTER, container); //Alinhado com o centro
 		layout.putConstraint(SpringLayout.NORTH, label[0], 5, SpringLayout.NORTH, container); //5 pixel da borda superior
@@ -83,6 +83,11 @@ public class TelaRegistroTecnico extends Tela{
 		botao[0].addActionListener(controlaEvento);
 		
 		
+
+		layout.putConstraint(SpringLayout.WEST, botaoVoltar, 5, SpringLayout.WEST, container);
+		layout.putConstraint(SpringLayout.SOUTH, botaoVoltar, -5, SpringLayout.SOUTH, container);
+		
+		
 		//Configurações de tamanho da janela
 		setSize(500,150);
 		//Posiciona a janela no centro da tela
@@ -133,8 +138,7 @@ public class TelaRegistroTecnico extends Tela{
 				setVisible(false);
 				dispose();
 				
-				//Volta pra tela principal
-				TelaPrincipal tela = new TelaPrincipal();
+				new TelaListasOrdensServico();
 				
 				
 				
