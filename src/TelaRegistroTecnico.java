@@ -128,7 +128,8 @@ public class TelaRegistroTecnico extends Tela{
 				//TODO: Passar os dados pra um controlador
 				
 				//DEBUG, caixa de diálogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nEmail: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nHabilidade Profissional: "+ resultado[3],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				Tecnico tecnico = new Tecnico(resultado[0],resultado[1],Integer.parseInt(resultado[2]),resultado[3]);
+				controlaDados.registraTecnico(tecnico);
 				
 				//Fecha a janela depois de abrir outra
 				setVisible(false);

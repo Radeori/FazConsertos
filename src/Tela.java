@@ -13,9 +13,11 @@ public abstract class Tela extends JFrame{
 	BotaoVoltar 	botaoVoltar;
 	Container 		container;
 	SpringLayout 	layout;
+	ControlaDados	controlaDados;
 	
 	Tela(String nome, int nLabel, int nEntrada, int nBotao){
 		super(nome);
+		controlaDados = ControlaDados.getControlaDados();
 		container = getContentPane();
 		layout = new SpringLayout();
 		container.setLayout(layout);

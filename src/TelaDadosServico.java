@@ -96,18 +96,7 @@ public class TelaDadosServico extends Tela{
 						}
 					}
 					
-					//------------------- AONDE OS DADOS SAEM DA TELA ------------------ //
-					//resultado:
-					//0 - nome
-					//1 - CPF
-					//2 - telefone
-					//3 - RG
-					//4 - Endere�o
-					//5 6 e 7 - Data de nascimento (dia,m�s,ano);
-					//TODO: Passar os dados pra um controlador
-					
-					//DEBUG, caixa de dialogo com os os dados dos textos.
-					JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereço: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
+
 					
 					//Volta pra tela principal
 					TelaPrincipal tela = new TelaPrincipal();

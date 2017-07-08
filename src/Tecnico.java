@@ -42,6 +42,9 @@ public class Tecnico {
 		this.nome = nome;
 	}
 	
+	public String toString(){
+		return getNome()+" "+getEmail()+" "+getTelefone()+" "+getProf();
+	}
 	
 	
 }
