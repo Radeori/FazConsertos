@@ -2,14 +2,29 @@
 public class Cliente {
 	
 	private String 	nome;
-	private String 	email;
 	private int 	cpf;
 	private int 	rg;
 	private int 	telefone;
 	private String 	endereco;
 	private String 	nascimento;
 	
+	Cliente(String nome,int cpf, int rg, int telefone,String endereco,String nascimento){
+		this.setNome(nome);
+		this.setCpf(cpf);
+		this.setRg(rg);
+		this.setTelefone(telefone);
+		this.setEndereco(endereco);
+		this.setNascimento(nascimento);
+	}
 	
+	
+	
+	public String toString() {
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", telefone=" + telefone
+				+ ", endereco=" + endereco + ", nascimento=" + nascimento + "]";
+	}
+
+
 	//Get e Setters
 	String getNome() {
 		return nome;
@@ -47,11 +62,6 @@ public class Cliente {
 	void setRg(int rg) {
 		this.rg = rg;
 	}
-	String getEmail() {
-		return email;
-	}
-	void setEmail(String email) {
-		this.email = email;
-	}
+
 
 }

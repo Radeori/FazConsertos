@@ -114,9 +114,18 @@ public class TelaSolicitaServico extends Tela {
 				//2 - telefone
 				//TODO: Colocar essa parte como exce��o caso o usu�rio n�o seja registrado
 				
-				JOptionPane.showMessageDialog(null,"Usuário não registrado","Erro",JOptionPane.ERROR_MESSAGE);
+				Cliente cliente = controlaDados.controlaCliente.buscaCliente(Integer.parseInt(resultado[1]));
+				//Se o cliente n�o foi encontrado
+				if(cliente == null){
+					JOptionPane.showMessageDialog(null,"Usuário não registrado","Erro",JOptionPane.ERROR_MESSAGE);
+					TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
+				}
+				else
+				{
+					TelaDadosServico telaDados = new TelaDadosServico();
+				}
 
-				TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
+			
 				
 			}
 			//Fecha a janela depois de abrir outra

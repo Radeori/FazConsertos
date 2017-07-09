@@ -11,12 +11,14 @@ public final class ControlaDados {
 	private static 		ControlaDados instanciaUnica;
 	private int 		ultimaMatricula;
 	ControlaTecnico 	controlaTecnico;
+	ControlaCliente 	controlaCliente;
 	
 
 	
 	public ControlaDados()
 	{
 		controlaTecnico = new ControlaTecnico();
+		controlaCliente = new ControlaCliente();
 		ultimaMatricula = 1;
 		
 	}

@@ -168,7 +168,8 @@ public class TelaRegistroCliente extends Tela{
 				//TODO: Passar os dados pra um controlador
 				
 				//DEBUG, caixa de dialogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Nome: " + resultado[0] + "\nCPF: "+ resultado[1] + "\nTelefone de contato: "+ resultado[2] + "\nRG: "+ resultado[3] + "\nEndereço: "+ resultado[4] + "\nData de Nascimento: "+ resultado[5]+ "/"+resultado[6]+"/"+resultado[7],"DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				Cliente cliente = new Cliente(resultado[0],Integer.parseInt(resultado[1]),Integer.parseInt(resultado[3]),Integer.parseInt(resultado[2]),resultado[4],resultado[5]+"/"+resultado[6]+"/"+resultado[7]);
+				controlaDados.controlaCliente.salvaCliente(cliente);
 				
 					TelaDadosServico telaDados = new TelaDadosServico();
 				
