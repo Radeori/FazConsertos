@@ -129,7 +129,7 @@ public class TelaRegistroTecnico extends Tela{
 				
 				//DEBUG, caixa de diálogo com os os dados dos textos.
 				Tecnico tecnico = new Tecnico(resultado[0],resultado[1],Integer.parseInt(resultado[2]),resultado[3]);
-				controlaDados.registraTecnico(tecnico);
+				controlaDados.adicionaTecnico(tecnico);
 				
 				//Fecha a janela depois de abrir outra
 				setVisible(false);

@@ -5,6 +5,7 @@ public class Tecnico {
 	private String 	email;
 	private int		telefone;
 	private String 	prof;
+	private int		matricula;
 	
 	
 	//Construtor
@@ -41,10 +42,17 @@ public class Tecnico {
 	void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public String toString(){
-		return getNome()+" "+getEmail()+" "+getTelefone()+" "+getProf();
+
+	 int getMatricula() {
+		return matricula;
+	}
+
+	 void setMatricula(int matricula) {
+		this.matricula = matricula;
 	}
 	
+	public String toString(){
+		return getMatricula()+" "+getNome()+" "+getEmail()+" "+getTelefone()+" "+getProf();
+	}
 	
 }

@@ -61,7 +61,9 @@ public class TelaLoginTecnico extends Tela{
 				}
 			
 				//DEBUG, caixa de diálogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Olá, " + resultado[0] + "!","DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				Tecnico tecnico = controlaDados.controlaTecnico.buscaTecnico(Integer.parseInt(resultado[0]));
+				if(tecnico != null)
+					System.out.println("o tecnico que voc� busca eh:"+tecnico.toString());
 				
 				
 				

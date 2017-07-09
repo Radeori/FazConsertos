@@ -1,14 +1,27 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.PrintWriter;
 
 public final class ControlaDados {
 	
-	private static ControlaDados instanciaUnica;
-	ControlaTecnico registraTecnico;
+	private static 		ControlaDados instanciaUnica;
+	private int 		ultimaMatricula;
+	ControlaTecnico 	controlaTecnico;
 	
-	private ControlaDados()
+
+	
+	public ControlaDados()
 	{
-		registraTecnico = new ControlaTecnico();
+		controlaTecnico = new ControlaTecnico();
+		ultimaMatricula = 1;
+		
 	}
 	
+	//Singleton
 	public static ControlaDados getControlaDados()
 	{
 		if(instanciaUnica == null)
@@ -16,8 +29,21 @@ public final class ControlaDados {
 		return instanciaUnica;
 	}
 	
-	public void registraTecnico(Tecnico tecnico)
+	//função que registra o Tecnico
+	public void adicionaTecnico(Tecnico tecnico)
 	{
-		registraTecnico.salvaTecnico(tecnico);
+		tecnico.setMatricula(ultimaMatricula+1);
+		//Se for adicionado, aumenta o numero da matricula
+		controlaTecnico.salvaTecnico(tecnico);
+		ultimaMatricula++;
+
 	}
+	
+
+	void atualizaDados()
+	{
+
+	}
+	
+	
 }

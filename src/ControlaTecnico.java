@@ -1,22 +1,39 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ControlaTecnico {
 
+	//Dados de debug
+	private ArrayList<Tecnico>	listaTecnico;
+	
 	ControlaTecnico(){
 
+		listaTecnico = new ArrayList<Tecnico>();
 	}
 	
 	void salvaTecnico(Tecnico tecnico)
 	{
-		try{
-			FileWriter fstream = new FileWriter("listaTecnicos.txt");
+			listaTecnico.add(tecnico);
+			//DEBUG
+			System.out.println("tecnico adicionado, nova lista:");
+			for(int i = 0; i < listaTecnico.size(); i++) {   
+			    System.out.print(listaTecnico.get(i).toString()+System.lineSeparator());
+			}
+	}
 			
-			System.out.println(tecnico.toString());
-			fstream.write(tecnico.toString());
-			fstream.flush();
+
+			
+	
+	
+	Tecnico buscaTecnico(int matricula)
+	{
+		for (int i = 0; i < listaTecnico.size(); i++) {
+			if(listaTecnico.get(i).getMatricula() == matricula)
+				return listaTecnico.get(i);
 		}
-		catch (Exception e){
-			System.err.println("Error: " + e.getMessage());
-		}
+		//Retorna null se não encontrar nada
+		return null;
+		
 	}
 }
