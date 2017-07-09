@@ -60,7 +60,9 @@ public class TelaLoginCliente extends Tela{
 				}
 			
 				//DEBUG, caixa de diálogo com os os dados dos textos.
-				JOptionPane.showMessageDialog(null, "Olá, " + resultado[0] + "!","DEBUG",JOptionPane.INFORMATION_MESSAGE);
+				Cliente cliente = controlaDados.controlaCliente.buscaCliente(Integer.parseInt(resultado[0]));
+				if(cliente != null)
+					System.out.println("o cliente que voc� busca eh:"+cliente.toString());
 				
 				
 				
