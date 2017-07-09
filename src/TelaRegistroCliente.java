@@ -79,7 +79,7 @@ public class TelaRegistroCliente extends Tela{
 		
 		//--Endereco--//
 		
-		label[5] = new JLabel(" EndereÃ§o");
+		label[5] = new JLabel(" Endereço");
 		container.add(label[5]);
 		layout.putConstraint(SpringLayout.WEST, label[5], 5, SpringLayout.EAST, entrada[1]); //5 pixel a direita de entradaCPF
 		layout.putConstraint(SpringLayout.NORTH, label[5], 5, SpringLayout.SOUTH, label[1]); //5 pixel abaixo de labelTelefone

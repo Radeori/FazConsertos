@@ -2,7 +2,7 @@
 public class Cliente {
 	
 	private String 	nome;
-	private int 	cpf;
+	private long  	cpf;
 	private int 	rg;
 	private int 	telefone;
 	private String 	endereco;
@@ -32,7 +32,7 @@ public class Cliente {
 	void setNome(String nome) {
 		this.nome = nome;
 	}
-	int getCpf() {
+	long getCpf() {
 		return cpf;
 	}
 	void setCpf(int cpf) {

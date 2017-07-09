@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.JOptionPane;
+
 public class ControlaCliente {
 
 	//Dados de debug
@@ -20,6 +22,7 @@ public class ControlaCliente {
 			for(int i = 0; i < listaCliente.size(); i++) {   
 			    System.out.print(listaCliente.get(i).toString()+System.lineSeparator());
 			}
+			JOptionPane.showMessageDialog(null,"Cliente  "+cliente.getNome()+" registrado!","Cliente registrado!",JOptionPane.INFORMATION_MESSAGE);
 	}
 			
 	

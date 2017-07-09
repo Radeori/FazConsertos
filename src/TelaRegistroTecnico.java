@@ -8,11 +8,11 @@ public class TelaRegistroTecnico extends Tela{
 	
 	//Construtor
 	public TelaRegistroTecnico(){
-		super ("Registro de novo tÃ©cnico",5,4,1);
+		super ("Registro de novo técnico",5,4,1);
 		
 		//--TÃ­tulo--//
 
-		label[0] = new JLabel("Entre com os dados de registro do novo tï¿½cnico:");
+		label[0] = new JLabel("Entre com os dados de registro do novo técnico:");
 		container.add(label[0]);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, label[0], 0, SpringLayout.HORIZONTAL_CENTER, container); //Alinhado com o centro
 		layout.putConstraint(SpringLayout.NORTH, label[0], 5, SpringLayout.NORTH, container); //5 pixel da borda superior

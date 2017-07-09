@@ -55,7 +55,7 @@ public class TelaLoginCliente extends Tela{
 					resultado[0] = pegaTexto(entrada[0]);
 				}
 				catch (CampoNaoPreenchidoException e) {
-					JOptionPane.showMessageDialog(null,"CPF n√£o pode estar em branco","Erro!",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"CPF n„o pode estar em branco","Erro!",JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 			

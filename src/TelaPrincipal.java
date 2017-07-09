@@ -31,7 +31,7 @@ public class TelaPrincipal extends Tela {
 		barraMenu.add(menu[0]);
 
 			//Cria o botï¿½o de registro de tï¿½cnico
-			menuItem[0] = new JMenuItem("Novo tï¿½cnico");
+			menuItem[0] = new JMenuItem("Novo técnico");
 			menuItem[0].addActionListener(controlaEvento);
 			menu[0].add(menuItem[0]);
 			
@@ -44,14 +44,14 @@ public class TelaPrincipal extends Tela {
 
 		
 		//--Solicitar serviï¿½o --//
-		botao[0] = new JButton("Solicitar serviï¿½o");
+		botao[0] = new JButton("Solicitar serviço");
 		container.add(botao[0]);
 		layout.putConstraint(SpringLayout.EAST, botao[0], -10 , SpringLayout.EAST, container);
 		layout.putConstraint(SpringLayout.SOUTH, botao[0], -10, SpringLayout.SOUTH, container);
 		botao[0].addActionListener(controlaEvento);
 
 		//--Login tecnico --//
-		botao[1] = new JButton("Login (tï¿½cnico)");
+		botao[1] = new JButton("Login (técnico)");
 		container.add(botao[1]);
 		layout.putConstraint(SpringLayout.EAST, botao[1], -10 , SpringLayout.WEST, botao[0]);
 		layout.putConstraint(SpringLayout.SOUTH, botao[1], 0, SpringLayout.SOUTH, botao[0]);

@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.JOptionPane;
+
 public class ControlaTecnico {
 
 	//Dados de debug
@@ -20,6 +22,7 @@ public class ControlaTecnico {
 			for(int i = 0; i < listaTecnico.size(); i++) {   
 			    System.out.print(listaTecnico.get(i).toString()+System.lineSeparator());
 			}
+			JOptionPane.showMessageDialog(null,"Técnico  "+tecnico.getNome()+" registrado!","Técnico registrado!",JOptionPane.INFORMATION_MESSAGE);
 	}
 			
 

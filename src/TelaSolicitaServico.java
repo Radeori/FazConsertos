@@ -10,7 +10,7 @@ public class TelaSolicitaServico extends Tela {
 
 
 	public TelaSolicitaServico(){
-		super ("Solicar novo servi√ßo",5,3,1);
+		super ("Solicar novo serviÁo",5,3,1);
 		
 		//Instancia objeto que controla os eventos
 		ControlaEvento controlaEvento = new ControlaEvento();
@@ -117,7 +117,7 @@ public class TelaSolicitaServico extends Tela {
 				Cliente cliente = controlaDados.controlaCliente.buscaCliente(Integer.parseInt(resultado[1]));
 				//Se o cliente n„o foi encontrado
 				if(cliente == null){
-					JOptionPane.showMessageDialog(null,"Usu√°rio n√£o registrado","Erro",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"Cliente n„o registrado!","Erro!",JOptionPane.ERROR_MESSAGE);
 					TelaRegistroCliente telaRegistro = new TelaRegistroCliente(resultado[0],resultado[1],resultado[2]);
 				}
 				else

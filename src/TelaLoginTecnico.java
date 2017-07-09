@@ -6,7 +6,7 @@ import javax.swing.*;
 public class TelaLoginTecnico extends Tela{
 
 	public TelaLoginTecnico() {
-		super("Login(T√©cnico)",1,1,2);
+		super("Login(TÈcnico)",1,1,2);
 		
 		//Instancia objeto que controla os eventos
 		ControlaEvento controlaEvento = new ControlaEvento();
@@ -18,7 +18,7 @@ public class TelaLoginTecnico extends Tela{
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, entrada[0], 0, SpringLayout.HORIZONTAL_CENTER, container); //
 		layout.putConstraint(SpringLayout.SOUTH, entrada[0], -3, SpringLayout.VERTICAL_CENTER, container); //
 		
-		label[0] = new JLabel("Matr√≠cula");
+		label[0] = new JLabel("MatrÌcula");
 		container.add(label[0]);
 		layout.putConstraint(SpringLayout.EAST, label[0], -5, SpringLayout.WEST, entrada[0]); //
 		layout.putConstraint(SpringLayout.VERTICAL_CENTER, label[0], 0, SpringLayout.VERTICAL_CENTER, entrada[0]); //
@@ -56,7 +56,7 @@ public class TelaLoginTecnico extends Tela{
 					resultado[0] = pegaTexto(entrada[0]);
 				}
 				catch (CampoNaoPreenchidoException e) {
-					JOptionPane.showMessageDialog(null,"Matr√≠cula n√£o pode estar em branco","Erro!",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"MatrÌcula n„o pode estar em branco","Erro!",JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 			
